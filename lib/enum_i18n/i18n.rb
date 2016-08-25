@@ -11,7 +11,7 @@ module EnumI18n
 
     def self.extended(receiver)
       # receiver.class_eval do
-      #   # alias_method_chain :enum, :enum_help
+      #   # alias_method_chain :enum, :enum_i18n
       # end
     end
   end
@@ -24,7 +24,7 @@ module EnumI18n
       def #{attr_i18n_method_name}
         enum_symbol = self.send(:#{attr_name})
         if enum_symbol
-          ::EnumHelp::Helper.translate_enum_symbol(self.class, :#{attr_name}, enum_symbol)
+          ::EnumI18n::Helper.translate_enum_symbol(self.class, :#{attr_name}, enum_symbol)
         else
           nil
         end
@@ -39,7 +39,7 @@ module EnumI18n
       klass.instance_eval <<-METHOD, __FILE__, __LINE__
       def #{collection_i18n_method_name}
         collection_array = #{collection_method_name}.collect do |symbol, _|
-          [symbol, ::EnumHelp::Helper.translate_enum_symbol(self, :#{attr_name}, symbol)]
+          [symbol, ::EnumI18n::Helper.translate_enum_symbol(self, :#{attr_name}, symbol)]
         end
         Hash[collection_array].with_indifferent_access
       end

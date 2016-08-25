@@ -1,8 +1,8 @@
 # EnumI18n
 
-This gem helps ActiveRecord::Enum work smoothly wish Internationalization.
+This gem helps ActiveRecord::Enum work smoothly with Internationalization.
 
-From Rails 4.1.0, ActiveRecord supported Enum method. But if you want do deal with I18n, you do it your self, many of redundant code.
+From Rails 4.1.0, ActiveRecord supported Enum method. But if you want do deal with I18n, you do it by yourself, many of redundant code.
 
 ## Installation
 
@@ -62,7 +62,7 @@ Person.characters_i18n
 # > {"nice"=>"良い", "bad"=>"悪い"}
 ```
 
-```erb
+```ruby
 # Using within a form
 <%= f.select :character, options_for_select(Person.characters_options_i18n) %>
 ```

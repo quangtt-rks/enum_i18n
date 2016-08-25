@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/enum_i18n.svg)](https://rubygems.org/gems/enum_i18n) [![Mood](https://img.shields.io/badge/mood-bored-blue.svg)](https://quangteomedia.com)
+
 # EnumI18n
 
 This gem helps ActiveRecord::Enum work smoothly with Internationalization.

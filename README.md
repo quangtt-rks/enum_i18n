@@ -1,8 +1,8 @@
-## *(Developing in progress)*
-
 # EnumI18n
 
-TODO: Write some introduction
+This gem helps ActiveRecord::Enum work smoothly wish Internationalization.
+
+From Rails 4.1.0, ActiveRecord supported Enum method. But if you want do deal with I18n, you do it your self, many of redundant code.
 
 ## Installation
 
@@ -22,7 +22,50 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Required Rails 4.1.x
+
+In model file:
+
+```ruby
+class Person < ActiveRecord::Base
+  enum character: { nice: 0, bad: 1 }
+end
+```
+
+In locale file:
+
+```yaml
+# config/locales/models/person/ja.yml
+ja:
+  activerecord:
+    models:
+      person: 人
+    attributes:
+      person:
+        name: 名前
+        character: キャラクター
+        characters:
+          nice: 良い
+          bad: 悪い
+```
+
+Using:
+
+```ruby
+person = Person.first
+person.character
+# > "nice"
+person.character_i18n
+# > "良い"
+
+Person.characters_i18n
+# > {"nice"=>"良い", "bad"=>"悪い"}
+```
+
+```erb
+# Using within a form
+<%= f.select :character, options_for_select(Person.characters_options_i18n) %>
+```
 
 ## Development
 

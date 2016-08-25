@@ -1,9 +1,4 @@
 require "enum_i18n/version"
 
-module EnumI18n
-  class Hi
-    def self.hi
-      puts "Hi Hi Hi"
-    end
-  end
-end
+require "enum_i18n/i18n"
+require "enum_i18n/railtie"

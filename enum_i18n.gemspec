@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Quang Tran"]
   spec.email         = ["quangtt2812@gmail.com"]
 
-  spec.summary       = %q{Extends of ActiveRecord::Enum, which can used in internationalization.}
+  spec.summary       = %q{Make ActiveRecord::Enum run smoothly with ActiveRecord Internationalization}
   spec.homepage      = "https://github.com/quangtt/enum_i18n"
   spec.license       = "MIT"
 

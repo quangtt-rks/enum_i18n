@@ -1,3 +1,5 @@
+## *(Developing in progress)*
+
 # EnumI18n
 
 TODO: Write some introduction
